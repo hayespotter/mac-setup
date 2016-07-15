@@ -27,7 +27,10 @@ append_to_bashrc() {
   fi
 }
 
+## mac settings and stuff
+source macsettings.sh
 
+# install command line tools
 xcode-select --install
 
 # if ~/.bin doesn't exist, create it
@@ -69,5 +72,16 @@ brew cleanup
 brew doctor
 
 # install some apps and packages
+
+brew install git # os x comes with an outdated version
+brew install rsync # ^^^^^^
+
+brew install openssl
+brew link --force openssl
+
+brew install bash-completion
+brew install htop
+brew install node
+## input sass install here
 
 
