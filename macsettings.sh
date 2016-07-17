@@ -2,7 +2,9 @@
 
 # Applies system and application settings
 
-# EXECUTION
+printf "System - Enabling dark mode"
+sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+
 printf "System - Disable boot sound effects\n"
 sudo nvram SystemAudioVolume=" "
 

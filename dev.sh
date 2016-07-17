@@ -27,8 +27,15 @@ append_to_bashrc() {
   fi
 }
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 ## mac settings and stuff
 source macsettings.sh
+
+## setup bash profile with some useful stuff
+touch ~/.bash_profile
+cat .bash_profile >> ~/.bash_profile
 
 # install command line tools
 xcode-select --install
@@ -74,7 +81,10 @@ brew doctor
 # install some apps and packages
 
 brew install git # os x comes with an outdated version
-brew install rsync # ^^^^^^
+touch ~/.gitignore
+cat .gitignore >> ~/.gitignore
+
+brew install rsync #
 
 brew install openssl
 brew link --force openssl
@@ -82,6 +92,43 @@ brew link --force openssl
 brew install bash-completion
 brew install htop
 brew install node
-## input sass install here
+
+brew install python
+pip install --upgrade setuptools
+pip install --upgrade pip
+
+brew install rbenv ruby-build rbenv-default-gems
+gem install bundler
+echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
+echo 'gem: --no-document' >> ~/.gemrc
+gem update --system
+
+
+fancy_echo "Installing quicklook plugins..."
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install qlprettypatch
+brew cask install quicklook-csv
+brew cask install betterzipql
+brew cask install webpquicklook
+brew cask install suspicious-package
+
+## app installs
+
+printf "Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant"
+brew cask install google-chrome
+brew cask install caffeine
+brew cask install flux
+brew cask install appcleaner
+brew cask install atom
+brew cask install dropbox
+brew cask install hipchat
+brew cask install cyberduck
+
+brew cask install virtualbox
+brew cask install vagrant
+printf "Finished installing apps."
 
 
