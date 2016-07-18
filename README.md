@@ -67,7 +67,7 @@ This script installs the following apps (via Brew Cask):
 * Cyberduck
 * Virtualbox
 * Vagrant
-* Sketch
+* Sketch (grabs a zip via wget)
 
 
 # MacOS Settings
