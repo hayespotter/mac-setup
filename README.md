@@ -62,9 +62,9 @@ This script installs the following apps (via Brew Cask):
 * Atom
 * Dropbox
 * Hipchat
-* Cyberduck
 * MacDown
 * Cyberduck
+* Sequel Pro
 * Virtualbox
 * Vagrant
 * Sketch (grabs a zip via wget)

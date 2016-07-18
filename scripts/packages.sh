@@ -113,6 +113,7 @@ brew cask install atom
 brew cask install dropbox
 brew cask install hipchat
 brew cask install cyberduck
+brew cask install sequel-pro
 brew cask install macdown
 brew cask install virtualbox
 brew cask install vagrant
