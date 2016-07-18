@@ -54,7 +54,6 @@ bash macsettings.sh
 touch ~/.bash_profile
 cat .bash_profile >> ~/.bash_profile
 
-
 # if ~/.bin doesn't exist, create it
 if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"

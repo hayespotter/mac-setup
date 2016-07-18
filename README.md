@@ -56,7 +56,7 @@ This script installs the following apps (via Brew Cask):
 * Google Chrome
 * Firefox
 * iTerm2
-* Caffeine
+* Caffeine (Amphetamine is a lot more powerful but not available via Cask)
 * Flux
 * Appcleaner
 * Atom
