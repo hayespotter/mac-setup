@@ -9,6 +9,64 @@ Shell scripts for setting up a mac. This was written primarily for use in my off
 ## To Update
 	cd ~/mac-setup/
 	git pull origin master
+	
+# Packages
+This script installs and configures the following packages:
+
+* Recommended available updates in the App Store
+* Xcode Command Line Tools
+* Homebrew package manager
+* Brew - Git
+* Brew - coreutils
+* Brew - moreutils
+* Brew - findutils
+* Brew - openssl
+* Brew - bash-completion
+* Brew - htop
+* Brew - node
+* NPM - gulp
+* NPM - gulp-sass
+* NPM - gulp-concat
+* NPM - fast-cli
+* NPM - bower
+* Brew - tree
+* Brew - awk
+* Brew - unrar
+* Brew - ssh-copy-id
+* Brew Cask - font-source-code-pro
+* Brew - ncdu
+* Brew - memtester
+* Brew - smartmontools
+* Brew - pv
+* Brew - thefuck
+* Brew - figlet
+* Brew - python
+* Brew - rbenv
+* Brew - ruby-build
+* Brew - rbenv-default-gems
+* Gem - bundler
+* Gem - lolcat
+* Gem - sass
+
+# Applications
+This script installs the following apps (via Brew Cask):
+
+* Google Chrome
+* Firefox
+* iTerm2
+* Caffeine
+* Flux
+* Appcleaner
+* Atom
+* Dropbox
+* Hipchat
+* Cyberduck
+* MacDown
+* Cyberduck
+* Virtualbox
+* Vagrant
+* Sketch
+
 
 # MacOS Settings
 This script configures the following settings:
