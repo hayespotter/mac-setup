@@ -36,15 +36,15 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 # Step 1: Update the OS and Install Xcode Tools
-echo "------------------------------"
-echo "Updating OSX.  If this requires a restart, run the script again."
+fancy_echo "------------------------------"
+fancy_echo "${bold}==> Updating OSX.  If this requires a restart, run the script again."
 # Install all available updates
 #sudo softwareupdate -iva
 # Install only recommended available updates
 sudo softwareupdate -irv
 
 fancy_echo "------------------------------"
-fancy_echo "Installing Xcode Command Line Tools."
+fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
 
@@ -89,7 +89,7 @@ fi
 
 
 # update brew
-fancy_echo "Updating Homebrew formulae ..."
+fancy_echo "${bold}==> Updating Homebrew formulae ..."
 tap "caskroom/fonts"
 brew update
 brew cleanup
@@ -118,6 +118,7 @@ brew install bash-completion
 brew install htop
 brew install node
 brew install tree
+brew install awk
 brew install unrar
 brew install ssh-copy-id
 cask "font-source-code-pro"
