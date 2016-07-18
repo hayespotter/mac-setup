@@ -69,8 +69,8 @@ fi
 # add ~/.bin to PATH
 append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 
-
-
 ## install packages
 source packages.sh
 
+fancy_echo "------------------------------"
+fancy_echo "${bold}==> Script complete"

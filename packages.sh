@@ -1,3 +1,6 @@
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 # check for homebrew, then install if it isn't already
 if ! command -v brew >/dev/null; then
   fancy_echo "${bold}==> Installing Homebrew ..."
@@ -17,6 +20,7 @@ fi
 
 
 # update brew
+fancy_echo "------------------------------"
 fancy_echo "${bold}==> Updating Homebrew formulae ..."
 brew tap "caskroom/fonts"
 brew update
@@ -25,6 +29,7 @@ brew doctor
 
 # install some apps and packages
 
+fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing utilities..."
 brew install git
 touch ~/.gitignore
@@ -62,11 +67,13 @@ brew install thefuck
 append_to_bashrc 'eval "$(thefuck --alias)"'
 brew install figlet
 
+fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing Python..."
 brew install python
 pip install --upgrade setuptools
 pip install --upgrade pip
 
+fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing and configuring Ruby..."
 brew install rbenv ruby-build rbenv-default-gems
 gem install bundler
@@ -75,8 +82,8 @@ echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
 gem install lolcat
 gem install sass
 gem update --system
-
-
+fancy_echo "------------------------------"
+fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing quicklook plugins..."
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -90,7 +97,8 @@ brew cask install suspicious-package
 
 ## app installs
 
-printf "${bold}==> Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2"
+fancy_echo "------------------------------"
+fancy_echo "${bold}==> Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2"
 brew cask install google-chrome
 brew cask install firefox
 brew cask install iterm2
@@ -105,7 +113,9 @@ brew cask install macdown
 
 brew cask install virtualbox
 brew cask install vagrant
-printf "${bold}==> Finished installing apps."
-printf "${bold}==> Cleaning up..."
+
+fancy_echo "------------------------------"
+fancy_echo "${bold}==> Finished installing apps."
+fancy_echo "${bold}==> Cleaning up..."
 brew cleanup
 brew cask cleanup
