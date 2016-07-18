@@ -73,7 +73,7 @@ This script installs the following apps (via Brew Cask):
 # MacOS Settings
 This script configures the following settings:
 
-* System - Enable dark mode
+* System - Enable dark mode (PAINT IT BLACK)
 * System - Disable boot sound effects
 * System - Disable automatic termination of inactive apps
 * System - Disable the 'Are you sure you want to open this application?' dialog
