@@ -3,8 +3,7 @@
 
 fancy_echo() {
   local fmt="$1"; shift
-
-  # shellcheck disable=SC2059
+  
   printf "\n$fmt\n" "$@"
 }
 
@@ -30,6 +29,25 @@ append_to_bashrc() {
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+# ask for sudo password up front
+sudo -v
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+
+# Step 1: Update the OS and Install Xcode Tools
+echo "------------------------------"
+echo "Updating OSX.  If this requires a restart, run the script again."
+# Install all available updates
+#sudo softwareupdate -iva
+# Install only recommended available updates
+sudo softwareupdate -irv
+
+fancy_echo "------------------------------"
+fancy_echo "Installing Xcode Command Line Tools."
+xcode-select --install
+
+
 ## mac settings and stuff
 source macsettings.sh
 
@@ -37,8 +55,6 @@ source macsettings.sh
 touch ~/.bash_profile
 cat .bash_profile >> ~/.bash_profile
 
-# install command line tools
-xcode-select --install
 
 # if ~/.bin doesn't exist, create it
 if [ ! -d "$HOME/.bin/" ]; then
@@ -74,17 +90,26 @@ fi
 
 # update brew
 fancy_echo "Updating Homebrew formulae ..."
+tap "caskroom/fonts"
 brew update
 brew cleanup
 brew doctor
 
 # install some apps and packages
 
-brew install git # os x comes with an outdated version
+brew install git
 touch ~/.gitignore
 cat .gitignore >> ~/.gitignore
 
-brew install rsync #
+brew install coreutils
+sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew install findutils
+# Install `wget` with IRI support.
+brew install wget --with-iri
 
 brew install openssl
 brew link --force openssl
@@ -92,6 +117,19 @@ brew link --force openssl
 brew install bash-completion
 brew install htop
 brew install node
+brew install tree
+brew install unrar
+brew install ssh-copy-id
+cask "font-source-code-pro"
+npm install --global fast-cli
+brew install ncdu
+brew install memtester
+brew install martmontools
+brew install pv
+brew install fuck
+append_to_bashrc 'eval "$(thefuck --alias)"'
+brew install lolcat
+brew install figlet
 
 brew install python
 pip install --upgrade setuptools
@@ -100,7 +138,7 @@ pip install --upgrade pip
 brew install rbenv ruby-build rbenv-default-gems
 gem install bundler
 echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
-echo 'gem: --no-document' >> ~/.gemrc
+echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
 gem update --system
 
 
@@ -117,8 +155,10 @@ brew cask install suspicious-package
 
 ## app installs
 
-printf "Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant"
+printf "Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2"
 brew cask install google-chrome
+brew cask install firefox
+brew cask install iterm2
 brew cask install caffeine
 brew cask install flux
 brew cask install appcleaner
@@ -126,9 +166,12 @@ brew cask install atom
 brew cask install dropbox
 brew cask install hipchat
 brew cask install cyberduck
+brew cask install macdown
 
 brew cask install virtualbox
 brew cask install vagrant
 printf "Finished installing apps."
-
+printf "Cleaning up..."
+brew cleanup
+brew cask cleanup
 

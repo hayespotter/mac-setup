@@ -156,3 +156,6 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 printf "App Store - Enable Debug Menu in the Mac App Store\n"
 defaults write com.apple.appstore ShowDebugMenu -bool true
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
