@@ -37,7 +37,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Step 1: Update the OS and Install Xcode Tools
 fancy_echo "------------------------------"
-fancy_echo "${bold}==> Updating OSX.  If this requires a restart, run the script again."
+fancy_echo "${bold}==> Updating MacOS. If this requires a restart, run the script again."
 # Install all available updates
 #sudo softwareupdate -iva
 # Install only recommended available updates
@@ -47,9 +47,8 @@ fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
-
 ## mac settings and stuff
-source macsettings.sh
+bash macsettings.sh
 
 ## setup bash profile with some useful stuff
 touch ~/.bash_profile
@@ -70,7 +69,7 @@ fi
 append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 
 ## install packages
-source packages.sh
+bash packages.sh
 
 fancy_echo "------------------------------"
-fancy_echo "${bold}==> Script complete"
+fancy_echo "${bold}==> Script complete."

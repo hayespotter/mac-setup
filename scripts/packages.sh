@@ -52,6 +52,8 @@ brew install bash-completion
 brew install htop
 brew install node
 npm install --global gulp
+npm install --global gulp-sass
+npm install --global gulp-concat
 npm install --global fast-cli
 npm install --global bower
 brew install tree
@@ -82,7 +84,8 @@ echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
 gem install lolcat
 gem install sass
 gem update --system
-fancy_echo "------------------------------"
+
+
 fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing quicklook plugins..."
 brew cask install qlcolorcode
@@ -98,7 +101,7 @@ brew cask install suspicious-package
 ## app installs
 
 fancy_echo "------------------------------"
-fancy_echo "${bold}==> Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2\nSketch"
+fancy_echo "${bold}==> Installing some apps"
 brew cask install google-chrome
 brew cask install firefox
 brew cask install iterm2
