@@ -5,6 +5,8 @@ Shell scripts for setting up a mac. This was written primarily for use in my off
 	cd
 	git clone https://github.com/hayespotter/mac-setup.git && cd mac-setup/
 	./run.sh
+	
+Once the script is complete you can review the output in the log file created at ~/setup.log .
 
 ## To Update
 	cd ~/mac-setup/
