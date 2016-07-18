@@ -70,5 +70,7 @@ fi
 append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 
 
+
 ## install packages
 source packages.sh
+

@@ -1,6 +1,6 @@
 # check for homebrew, then install if it isn't already
 if ! command -v brew >/dev/null; then
-  fancy_echo "Installing Homebrew ..."
+  fancy_echo "${bold}==> Installing Homebrew ..."
     curl -fsS \
       'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
 
@@ -11,14 +11,14 @@ fi
 
 # look for old brew-cask
 if brew list | grep -Fq brew-cask; then
-  fancy_echo "Uninstalling old Homebrew-Cask ..."
+  fancy_echo "${bold}==> Uninstalling old Homebrew-Cask ..."
   brew uninstall --force brew-cask
 fi
 
 
 # update brew
 fancy_echo "${bold}==> Updating Homebrew formulae ..."
-tap "caskroom/fonts"
+brew tap "caskroom/fonts"
 brew update
 brew cleanup
 brew doctor
@@ -46,19 +46,20 @@ brew link --force openssl
 brew install bash-completion
 brew install htop
 brew install node
+npm install --global gulp
+npm install --global fast-cli
+npm install --global bower
 brew install tree
 brew install awk
 brew install unrar
 brew install ssh-copy-id
-cask "font-source-code-pro"
-npm install --global fast-cli
+brew cask install "font-source-code-pro"
 brew install ncdu
 brew install memtester
-brew install martmontools
+brew install smartmontools
 brew install pv
 brew install thefuck
 append_to_bashrc 'eval "$(thefuck --alias)"'
-brew install lolcat
 brew install figlet
 
 fancy_echo "${bold}==> Installing Python..."
@@ -71,6 +72,8 @@ brew install rbenv ruby-build rbenv-default-gems
 gem install bundler
 echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
 echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
+gem install lolcat
+gem install sass
 gem update --system
 
 

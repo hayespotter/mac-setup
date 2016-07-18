@@ -17,8 +17,6 @@ man() {
 alias profile='nano ~/.bash_profile'
 alias reload='source ~/.bash_profile'
 
-alias g='git'
-
 alias reboot="sudo shutdown -r now"
 alias off="sudo shutdown -h now"
 
@@ -30,6 +28,7 @@ alias dd="sudo dd"
 alias ls='ls -al'
 alias ttop="top -R -F -s 10 -o rsize"
 alias top="sudo htop"
+alias htop="sudo htop"
 
 alias ps="ps aux"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
