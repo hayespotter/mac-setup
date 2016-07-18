@@ -48,7 +48,7 @@ fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
 ## mac settings and stuff
-bash macsettings.sh
+source macsettings.sh
 
 ## setup bash profile with some useful stuff
 touch ~/.bash_profile
@@ -68,7 +68,7 @@ fi
 append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 
 ## install packages
-bash packages.sh
+source packages.sh
 
 fancy_echo "------------------------------"
 fancy_echo "${bold}==> Script complete."

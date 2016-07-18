@@ -1,3 +1,4 @@
+#### redefined variables so you can run this script by itself if need be
 bold=$(tput bold)
 normal=$(tput sgr0)
 
