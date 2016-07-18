@@ -1,5 +1,5 @@
 # mac-setup
-shell scripts for setting up a mac
+Shell scripts for setting up a mac. This was written primarily for use in my office so it may include some things you have zero use for, such as Sketch. 
 
 ## To Install
 	cd
