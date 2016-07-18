@@ -90,7 +90,7 @@ fi
 
 # update brew
 fancy_echo "${bold}==> Updating Homebrew formulae ..."
-tap "caskroom/fonts"
+brew tap "caskroom/fonts"
 brew update
 brew cleanup
 brew doctor
@@ -116,21 +116,24 @@ brew link --force openssl
 
 brew install bash-completion
 brew install htop
+append_to_bashrc 'alias htop="sudo htop"'
 brew install node
+npm install --global gulp
+npm install --global fast-cli
+npm install --global bower
 brew install tree
 brew install awk
 brew install unrar
 brew install ssh-copy-id
-cask "font-source-code-pro"
-npm install --global fast-cli
+brew cask "font-source-code-pro"
 brew install ncdu
 brew install memtester
-brew install martmontools
+brew install smartmontools
 brew install pv
-brew install fuck
+brew install thefuck
 append_to_bashrc 'eval "$(thefuck --alias)"'
-brew install lolcat
 brew install figlet
+brew install archey
 
 brew install python
 pip install --upgrade setuptools
@@ -138,8 +141,10 @@ pip install --upgrade pip
 
 brew install rbenv ruby-build rbenv-default-gems
 gem install bundler
-echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
-echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
+fancy_echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
+fancy_echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
+gem install lolcat
+gem install sass
 gem update --system
 
 

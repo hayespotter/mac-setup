@@ -17,8 +17,6 @@ man() {
 alias profile='nano ~/.bash_profile'
 alias reload='source ~/.bash_profile'
 
-alias g='git'
-
 alias reboot="sudo shutdown -r now"
 alias off="sudo shutdown -h now"
 
