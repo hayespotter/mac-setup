@@ -98,7 +98,7 @@ brew cask install suspicious-package
 ## app installs
 
 fancy_echo "------------------------------"
-fancy_echo "${bold}==> Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2"
+fancy_echo "${bold}==> Installing the following apps:\nChrome\nCaffeine\nFlux\nAtom\nDropbox\nVirtualbox\nVagrant\nCyberduck\nHipchat\nMacDown\nAppCleaner\niTerm2\nSketch"
 brew cask install google-chrome
 brew cask install firefox
 brew cask install iterm2
@@ -110,9 +110,14 @@ brew cask install dropbox
 brew cask install hipchat
 brew cask install cyberduck
 brew cask install macdown
-
 brew cask install virtualbox
 brew cask install vagrant
+
+wget https://www.sketchapp.com/static/download/sketch.zip
+unzip -q sketch.zip
+rm -rf sketch.zip __MACOSX/
+cp -rf Sketch.app /Applications
+rm -rf Sketch.app/
 
 fancy_echo "------------------------------"
 fancy_echo "${bold}==> Finished installing apps."
