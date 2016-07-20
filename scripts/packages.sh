@@ -87,7 +87,9 @@ gem install bundler
 echo 'bundler' >> "$(brew --prefix rbenv)/default-gems"
 echo "gem: --user-install --no-document -n~/bin" >> ~/.gemrc
 gem install lolcat
-gem install sass
+if [ ! "$1" = "designer" ]; then
+	gem install sass
+fi
 gem update --system
 
 
@@ -109,7 +111,6 @@ fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing some apps"
 brew cask install google-chrome
 brew cask install firefox
-brew cask install iterm2
 brew cask install caffeine
 brew cask install flux
 brew cask install appcleaner
@@ -119,6 +120,7 @@ brew cask install cyberduck
 brew cask install macdown
 
 if [ ! "$1" = "designer" ]; then
+	brew cask install iterm2
 	brew cask install atom
 	brew cask install sequel-pro
 	brew cask install virtualbox
