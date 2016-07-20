@@ -10,10 +10,12 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-echo ""
+fancy_echo "------------------------------"
 
-fancy_echo "System - Enabling dark mode"
-sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+if [ ! "$1" = "designer" ]; then
+	fancy_echo "System - Enabling dark mode"
+	sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+fi
 
 fancy_echo "System - Disable boot sound effects\n"
 sudo nvram SystemAudioVolume=" "
@@ -42,6 +44,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 fancy_echo "System - Avoid creating .DS_Store files on network volumes\n"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+fancy_echo "Mission Control - Don’t automatically rearrange Spaces based on most recent use\n"
+defaults write com.apple.dock mru-spaces -bool false
 
 fancy_echo "Keyboard - Automatically illuminate built-in MacBook keyboard in low light\n"
 defaults write com.apple.BezelServices kDim -bool true
@@ -88,17 +93,21 @@ defaults write com.apple.dock "dashboard-in-overlay" -bool true
 fancy_echo "iCloud - Save to disk by default\n"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-fancy_echo "Finder - Show the $HOME/Library folder\n"
-chflags nohidden $HOME/Library
+if [ ! "$1" = "designer" ]; then
 
-fancy_echo "Finder - Show hidden files\n"
-defaults write com.apple.finder AppleShowAllFiles -bool true
+	fancy_echo "Finder - Show the $HOME/Library folder\n"
+	chflags nohidden $HOME/Library
 
-fancy_echo "Finder - Show filename extensions\n"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+	fancy_echo "Finder - Show hidden files\n"
+	defaults write com.apple.finder AppleShowAllFiles -bool true
 
-fancy_echo "Finder - Disable the warning when changing a file extension\n"
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+	fancy_echo "Finder - Show filename extensions\n"
+	defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+	fancy_echo "Finder - Disable the warning when changing a file extension\n"
+	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+fi
 
 fancy_echo "Finder - Show path bar\n"
 defaults write com.apple.finder ShowPathbar -bool true
@@ -155,6 +164,3 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 fancy_echo "App Store - Enable Debug Menu in the Mac App Store\n"
 defaults write com.apple.appstore ShowDebugMenu -bool true
-
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false

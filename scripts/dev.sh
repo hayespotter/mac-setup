@@ -1,5 +1,4 @@
 #!/bin/bash
-# setup for developer
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -34,6 +33,14 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+
+if [ ! "$1" = "designer" ]; then
+  fancy_echo "------------------------------"
+  fancy_echo "${bold}==> Setting Mac up for a developer"
+else 
+  fancy_echo "------------------------------"
+  fancy_echo "${bold}==> Setting Mac up for a designer"
+fi
 
 # Step 1: Update the OS and Install Xcode Tools
 fancy_echo "------------------------------"

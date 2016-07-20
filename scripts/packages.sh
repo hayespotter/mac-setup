@@ -52,11 +52,15 @@ brew link --force openssl
 brew install bash-completion
 brew install htop
 brew install node
-npm install --global gulp
-npm install --global gulp-sass
-npm install --global gulp-concat
 npm install --global fast-cli
-npm install --global bower
+
+if [ ! "$1" = "designer" ]; then
+	npm install --global gulp
+	npm install --global gulp-sass
+	npm install --global gulp-concat
+	npm install --global bower
+fi
+
 brew install tree
 brew install awk
 brew install unrar
@@ -109,20 +113,25 @@ brew cask install iterm2
 brew cask install caffeine
 brew cask install flux
 brew cask install appcleaner
-brew cask install atom
 brew cask install dropbox
 brew cask install hipchat
 brew cask install cyberduck
-brew cask install sequel-pro
 brew cask install macdown
-brew cask install virtualbox
-brew cask install vagrant
 
-wget https://www.sketchapp.com/static/download/sketch.zip
-unzip -q sketch.zip
-rm -rf sketch.zip __MACOSX/
-cp -rf Sketch.app /Applications
-rm -rf Sketch.app/
+if [ ! "$1" = "designer" ]; then
+	brew cask install atom
+	brew cask install sequel-pro
+	brew cask install virtualbox
+	brew cask install vagrant
+fi
+
+if [ ! -d "/Applications/Sketch.app" ]; then
+  wget https://www.sketchapp.com/static/download/sketch.zip
+  unzip -q sketch.zip
+  rm -rf sketch.zip __MACOSX/
+  cp -rf Sketch.app /Applications
+  rm -rf Sketch.app/
+fi
 
 fancy_echo "------------------------------"
 fancy_echo "${bold}==> Finished installing apps."
