@@ -30,11 +30,11 @@ This script installs and configures the following packages:
 * Brew - bash-completion
 * Brew - htop
 * Brew - node
-* NPM - gulp - *developer only*
-* NPM - gulp-sass - *developer only*
-* NPM - gulp-concat - *developer only*
+* NPM - gulp - **developer only**
+* NPM - gulp-sass - **developer only**
+* NPM - gulp-concat - **developer only**
 * NPM - fast-cli
-* NPM - bower - *developer only*
+* NPM - bower - **developer only**
 * Brew - tree
 * Brew - awk
 * Brew - unrar
@@ -52,32 +52,32 @@ This script installs and configures the following packages:
 * Brew - rbenv-default-gems
 * Gem - bundler
 * Gem - lolcat
-* Gem - sass - *developer only*
+* Gem - sass - **developer only**
 
 # Applications
 This script installs the following apps (via Brew Cask):
 
 * Google Chrome
 * Firefox
-* iTerm2 - *developer only*
+* iTerm2 - **developer only**
 * Caffeine (Amphetamine is a lot more powerful but not available via Cask)
 * Flux
 * Appcleaner
-* Atom - *developer only*
+* Atom - **developer only**
 * Dropbox
 * Hipchat
 * MacDown
 * Cyberduck
-* Sequel Pro - *developer only*
-* Virtualbox - *developer only*
-* Vagrant - *developer only*
+* Sequel Pro - **developer only**
+* Virtualbox - **developer only**
+* Vagrant - **developer only**
 * Sketch (grabs a zip via wget)
 
 
 # MacOS Settings
 This script configures the following settings:
 
-* System - Enable dark mode (PAINT IT BLACK) - *developer only*
+* System - Enable dark mode (PAINT IT BLACK) - **developer only**
 * System - Disable boot sound effects
 * System - Disable automatic termination of inactive apps
 * System - Disable the 'Are you sure you want to open this application?' dialog
@@ -101,10 +101,10 @@ This script configures the following settings:
 * Dock - Remove the auto-hiding delay
 * Dock - Don’t show Dashboard as a Space
 * iCloud - Save to disk by default
-* Finder - Show the ~/Library folder - *developer only*
-* Finder - Show hidden files - *developer only*
-* Finder - Show filename extensions - *developer only*
-* Finder - Disable the warning when changing a file extension - *developer only*
+* Finder - Show the ~/Library folder - **developer only**
+* Finder - Show hidden files - **developer only**
+* Finder - Show filename extensions - **developer only**
+* Finder - Disable the warning when changing a file extension - **developer only**
 * Finder - Show path bar
 * Finder - Show status bar
 * Finder - Display full POSIX path as window title
