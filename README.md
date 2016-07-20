@@ -15,6 +15,8 @@ Once the script is complete you can review the output in the log file created at
 ## To Update
 	cd ~/mac-setup/
 	git pull origin master
+
+If you want to experiment with what I'm building out, you can checkout the 'dev' branch, no guarantees that what's in there actually works or doesn't rm -rf your home directory, @edgefall ;)
 	
 # Packages
 This script installs and configures the following packages:
