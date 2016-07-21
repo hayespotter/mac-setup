@@ -54,8 +54,14 @@ fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
-## mac settings and stuff
-source macsettings.sh
+
+if [ "$1" = "no-settings" ]; then
+  fancy_echo "${bold}==> Skipping mac settings file."
+else
+  ## mac settings and stuff
+  source macsettings.sh
+fi
+
 
 ## setup bash profile with some useful stuff
 touch ~/.bash_profile

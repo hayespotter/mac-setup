@@ -10,6 +10,10 @@ If you would like to omit installing some super development specific packages an
 
 	./mac-setup designer
 
+You can also omit changing any macOS settings by adding the 'no-settings' parameter.
+
+	./mac-setup no-settings
+
 Once the script is complete you can review the output in the log file created at ~/setup.log .
 
 ## To Update
