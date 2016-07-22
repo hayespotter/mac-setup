@@ -35,22 +35,22 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 if [ ! "$1" = "designer" ]; then
-  fancy_echo "------------------------------"
+  fancy_echo "------------------------------------------------------------"
   fancy_echo "${bold}==> Setting Mac up for a developer"
 else 
-  fancy_echo "------------------------------"
+  fancy_echo "------------------------------------------------------------"
   fancy_echo "${bold}==> Setting Mac up for a designer"
 fi
 
 # Step 1: Update the OS and Install Xcode Tools
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Updating MacOS. If this requires a restart, run the script again."
 # Install all available updates
 #sudo softwareupdate -iva
 # Install only recommended available updates
 sudo softwareupdate -irv
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
@@ -59,7 +59,7 @@ if [ "$1" = "no-settings" ]; then
   fancy_echo "${bold}==> Skipping mac settings file."
 else
   ## mac settings and stuff
-  source macsettings.sh
+  source scripts/macsettings.sh
 fi
 
 
@@ -81,7 +81,8 @@ fi
 append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 
 ## install packages
-source packages.sh
+source scripts/packages.sh
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Script complete."
+return

@@ -42,7 +42,6 @@ This script installs and configures the following packages:
 * NPM - fast-cli
 * NPM - bower - **developer only**
 * Brew - tree
-* Brew - awk
 * Brew - unrar
 * Brew - ssh-copy-id
 * Brew Cask - font-source-code-pro

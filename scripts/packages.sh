@@ -21,7 +21,7 @@ fi
 
 
 # update brew
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Updating Homebrew formulae ..."
 brew tap "caskroom/fonts"
 brew update
@@ -30,7 +30,7 @@ brew doctor
 
 # install some apps and packages
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing utilities..."
 brew install git
 touch ~/.gitignore
@@ -62,7 +62,6 @@ if [ ! "$1" = "designer" ]; then
 fi
 
 brew install tree
-brew install awk
 brew install unrar
 brew install ssh-copy-id
 brew cask install "font-source-code-pro"
@@ -74,14 +73,14 @@ brew install thefuck
 append_to_bashrc 'eval "$(thefuck --alias)"'
 brew install figlet
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing Python..."
 brew install python
 pip install --upgrade setuptools
 pip install --upgrade pip
 pip install yolog
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing and configuring Ruby..."
 brew install rbenv ruby-build rbenv-default-gems
 gem install bundler
@@ -94,7 +93,7 @@ fi
 gem update --system
 
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing quicklook plugins..."
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -108,24 +107,38 @@ brew cask install suspicious-package
 
 ## app installs
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing some apps"
 brew cask install google-chrome
+fancy_echo "------------------------------------------------------------"
 brew cask install firefox
+fancy_echo "------------------------------------------------------------"
 brew cask install caffeine
+fancy_echo "------------------------------------------------------------"
 brew cask install flux
+fancy_echo "------------------------------------------------------------"
 brew cask install appcleaner
+fancy_echo "------------------------------------------------------------"
 brew cask install dropbox
+fancy_echo "------------------------------------------------------------"
 brew cask install hipchat
+fancy_echo "------------------------------------------------------------"
 brew cask install cyberduck
+fancy_echo "------------------------------------------------------------"
 brew cask install macdown
+fancy_echo "------------------------------------------------------------"
 
 if [ ! "$1" = "designer" ]; then
 	brew cask install iterm2
+	fancy_echo "------------------------------------------------------------"
 	brew cask install atom
+	fancy_echo "------------------------------------------------------------"
 	brew cask install sequel-pro
+	fancy_echo "------------------------------------------------------------"
 	brew cask install virtualbox
+	fancy_echo "------------------------------------------------------------"
 	brew cask install vagrant
+	fancy_echo "------------------------------------------------------------"
 fi
 
 if [ ! -d "/Applications/Sketch.app" ]; then
@@ -136,7 +149,7 @@ if [ ! -d "/Applications/Sketch.app" ]; then
   rm -rf Sketch.app/
 fi
 
-fancy_echo "------------------------------"
+fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Finished installing apps."
 fancy_echo "${bold}==> Cleaning up..."
 brew cleanup
