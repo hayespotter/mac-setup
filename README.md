@@ -53,6 +53,7 @@ This script installs and configures the following packages:
 * Brew - thefuck
 * Brew - figlet
 * Brew - python
+* Pip - yolog
 * Brew - rbenv
 * Brew - ruby-build
 * Brew - rbenv-default-gems
