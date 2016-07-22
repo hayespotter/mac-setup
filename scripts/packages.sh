@@ -79,6 +79,7 @@ fancy_echo "${bold}==> Installing Python..."
 brew install python
 pip install --upgrade setuptools
 pip install --upgrade pip
+pip install yolog
 
 fancy_echo "------------------------------"
 fancy_echo "${bold}==> Installing and configuring Ruby..."
