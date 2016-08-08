@@ -1,6 +1,12 @@
 # mac-setup
 Shell scripts for setting up a mac. This was written primarily for use in my office so it may include some things you have zero use for, such as Sketch. Feedback is very welcome. 
 
+## Notice
+This script is not perfect, and needs improvement. Two things that come to mind is that it doesn't wait for xcode command line tools to be installed, so if you don't catch it will begin installing brew before you've even noticed the command line tools pop up.
+Some of the changes also need certain services restarted, like Dock and Finder, I'll probably just throw in killall commands at the end of the script, but I do recommend just restarting the machine when the script is finished. 
+
+I wrote the script with the intent of it being able to run on a machine no matter what state it is in, so don't be concerned if you already have brew setup and whatnot. Just be aware that you should pay attention to what the script is doing because I cannot guarantee it won't break anything if you're not starting from a fresh install, it shouldn't, but you never know.
+
 ## Installation and Usage
 	cd
 	git clone https://github.com/hayespotter/mac-setup.git && cd mac-setup/
