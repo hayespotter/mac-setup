@@ -3,12 +3,12 @@
 # Applies system and application settings
 
 
-### added this bit again so you can easily run this script by itself
+# ### added this bit again so you can easily run this script by itself
 
-# ask for sudo password up front
-sudo -v
-# Keep-alive: update existing `sudo` time stamp until script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# # ask for sudo password up front
+# sudo -v
+# # Keep-alive: update existing `sudo` time stamp until script has finished
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 fancy_echo "------------------------------"
 

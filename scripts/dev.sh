@@ -54,6 +54,8 @@ fancy_echo "------------------------------------------------------------"
 fancy_echo "${bold}==> Installing Xcode Command Line Tools."
 xcode-select --install
 
+read -p "Press any key after Xcode command line tools have been installed to continue"
+
 
 if [ "$1" = "no-settings" ]; then
   fancy_echo "${bold}==> Skipping mac settings file."
@@ -83,6 +85,8 @@ append_to_bashrc 'export PATH="$HOME/.bin:$PATH"'
 ## install packages
 source scripts/packages.sh
 
+sudo automator scripts/timemachine.workflow/ &>/dev/null && echo "Time Machine is now configured"
+
 fancy_echo "------------------------------------------------------------"
-fancy_echo "${bold}==> Script complete."
+fancy_echo "${bold}==> Script complete. Please restart your computer."
 return
