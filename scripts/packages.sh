@@ -93,17 +93,17 @@ fi
 gem update --system
 
 
-fancy_echo "------------------------------------------------------------"
-fancy_echo "${bold}==> Installing quicklook plugins..."
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown
-brew cask install quicklook-json
-brew cask install qlprettypatch
-brew cask install quicklook-csv
-brew cask install betterzipql
-brew cask install webpquicklook
-brew cask install suspicious-package
+#fancy_echo "------------------------------------------------------------"
+#fancy_echo "${bold}==> Installing quicklook plugins..."
+#brew cask install qlcolorcode
+#brew cask install qlstephen
+#brew cask install qlmarkdown
+#brew cask install quicklook-json
+#brew cask install qlprettypatch
+#brew cask install quicklook-csv
+#brew cask install betterzipql
+#brew cask install webpquicklook
+#brew cask install suspicious-package
 
 ## app installs
 
@@ -138,6 +138,8 @@ if [ ! "$1" = "designer" ]; then
 	brew cask install virtualbox
 	fancy_echo "------------------------------------------------------------"
 	brew cask install vagrant
+	fancy_echo "------------------------------------------------------------"
+	brew cask install docker
 	fancy_echo "------------------------------------------------------------"
 fi
 

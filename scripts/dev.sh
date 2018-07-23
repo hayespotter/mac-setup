@@ -37,6 +37,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 if [ ! "$1" = "designer" ]; then
   fancy_echo "------------------------------------------------------------"
   fancy_echo "${bold}==> Setting Mac up for a developer"
+  sudo spctl --master-disable
 else 
   fancy_echo "------------------------------------------------------------"
   fancy_echo "${bold}==> Setting Mac up for a designer"
