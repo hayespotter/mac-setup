@@ -121,7 +121,7 @@ brew cask install appcleaner
 fancy_echo "------------------------------------------------------------"
 brew cask install dropbox
 fancy_echo "------------------------------------------------------------"
-brew cask install hipchat
+brew cask install slack
 fancy_echo "------------------------------------------------------------"
 brew cask install cyberduck
 fancy_echo "------------------------------------------------------------"
@@ -134,8 +134,8 @@ if [ ! "$1" = "designer" ]; then
 	brew cask install atom
 	fancy_echo "------------------------------------------------------------"
 	brew cask install sequel-pro
-	fancy_echo "------------------------------------------------------------"
-	brew cask install virtualbox
+	#fancy_echo "------------------------------------------------------------"
+	#brew cask install virtualbox
 	fancy_echo "------------------------------------------------------------"
 	brew cask install vagrant
 	fancy_echo "------------------------------------------------------------"
